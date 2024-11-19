@@ -1,0 +1,27 @@
+bool Pluscourte(Liste l1, Liste l2){
+    return longueur_rec(l1) < longueur_rec(l2);
+}
+
+bool ZeroEnPositionUnOuDeuxOuTrois (Liste l){
+    if(estVide(l)){
+        return FALSE;
+    }else if(premier(l)==0 || suite(premier(l))==0 || suite(suite(premier(l)))==0){
+        return TRUE;
+    }
+}
+
+int NombreDe0AvantPositionK(Liste L,int k){
+    int cpt;
+    if(estVide(L)){
+        return 0;
+    }else {
+        if(premier(L)==0){
+            cpt++;
+        }
+        NombreDe0AvantPositionK(suite(L),k);
+        
+    }
+    return cpt;
+        
+}
+
